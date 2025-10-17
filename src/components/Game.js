@@ -1,7 +1,13 @@
+import Menu from "./Menu.js";
+
 const Game = ({ rows, columns }) => {
+  const start = () => {
+    console.log("start");
+  };
+
   return (
     <div className="Game">
-      rows {rows}, columns {columns}
+      <Menu onClick={start} />
     </div>
   );
 };
