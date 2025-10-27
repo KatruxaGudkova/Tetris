@@ -7,7 +7,23 @@ const GameController = ({
   setGameOver,
   setPlayer,
 }) => {
-  return <input className="GameController" type="text" />;
+  const onKeyUp = ({ code }) => {
+    console.log(`onKeyUp ${code}`);
+  };
+
+  const onKeyDown = ({ code }) => {
+    console.log(`onKeyDown ${code}`);
+  };
+
+  return (
+    <input
+      className="GameController"
+      type="text"
+      onKeyDown={onKeyDown}
+      onKeyUp={onKeyUp}
+      autoFocus
+    />
+  );
 };
 
 export default GameController;
