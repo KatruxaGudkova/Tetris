@@ -2,11 +2,11 @@ import "./Board.css";
 import BoardCell from "./BoardCell.js";
 
 const Board = ({ board }) => {
-  console.log("board", board);
+  // console.log("board", board);
 
   const boardStyles = {
     gridTemplateRows: `repeat(${board.size.rows}, 1fr)`,
-    gridTemplateRColumns: `repeat(${board.size.columns}, 1fr)`,
+    gridTemplateColumns: `repeat(${board.size.columns}, 1fr)`,
   };
 
   return (
