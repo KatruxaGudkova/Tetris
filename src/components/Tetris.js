@@ -5,7 +5,11 @@ import { useBoard } from "../hooks/useBoard.js";
 const Tetris = ({ rows, columns, setGameOver }) => {
   const [board, setBoard] = useBoard({ rows, columns });
 
-  return <Board board={board} />;
+  return (
+    <div className="Tetris">
+      <Board board={board} />
+    </div>
+  );
 };
 
 export default Tetris;
