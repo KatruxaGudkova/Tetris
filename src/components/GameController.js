@@ -1,5 +1,8 @@
 import "./GameController.css";
 
+import { Action, actionForKey, actionIsDrop } from "../business/Input.js";
+import { playerController } from "../business/PlayerController.js";
+
 const GameController = ({
   board,
   gameStats,
@@ -8,11 +11,25 @@ const GameController = ({
   setPlayer,
 }) => {
   const onKeyUp = ({ code }) => {
-    console.log(`onKeyUp ${code}`);
+    const action = actionForKey(code);
+
+    if (action === Action.Quit) {
+      setGameOver(true);
+    }
   };
 
   const onKeyDown = ({ code }) => {
-    console.log(`onKeyDown ${code}`);
+    handleInput({ action });
+  };
+
+  const handleInput = ({ action }) => {
+    playerController({
+      action,
+      board,
+      player,
+      setPlayer,
+      setGameOver,
+    });
   };
 
   return (
