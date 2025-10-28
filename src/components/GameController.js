@@ -19,6 +19,7 @@ const GameController = ({
   };
 
   const onKeyDown = ({ code }) => {
+    const action = actionForKey(code);
     handleInput({ action });
   };
 
