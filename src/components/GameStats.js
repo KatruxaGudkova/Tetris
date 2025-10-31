@@ -8,11 +8,11 @@ const GameStats = ({ gameStats }) => {
 
   return (
     <ul className="GameStats GameStats__right">
-      <li>Level</li>
+      <li>Уровень</li>
       <li className="value">{level}</li>
-      <li>Lines to level</li>
+      <li>Строк до следующего уровня</li>
       <li className="value">{linesToLevel}</li>
-      <li>Points</li>
+      <li>Очки</li>
       <li className="value">{points}</li>
     </ul>
   );
