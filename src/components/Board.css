@@ -2,11 +2,31 @@
   margin: 2em auto;
   display: grid;
   grid-gap: 2px;
-  width: 45vw;
-  height: 90vw;
-  /* background: rgb(32, 0, 64); */
+  /* Адаптивные размеры */
+  width: min(40vh, 70vw); /* Высота экрана или ширина, что меньше */
+  height: min(80vh, 140vw); /* Сохраняем пропорции 2:1 */
+  max-width: 500px; /* Ограничиваем на больших экранах */
+  max-height: 1000px;
+  /* Стили */
   background: linear-gradient(145deg, #ee5a24, #ffff6b);
   border: 4px solid rgb(255, 255, 255);
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+  .Board {
+    width: min(35vh, 85vw);
+    height: min(70vh, 170vw);
+    margin: 1em auto;
+  }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+  .Board {
+    width: min(30vh, 90vw);
+    height: min(60vh, 180vw);
+  }
 }

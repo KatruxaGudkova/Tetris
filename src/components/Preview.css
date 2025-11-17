@@ -1,8 +1,7 @@
 .Preview {
   position: absolute;
   top: 0;
-  left: 72.2vw;
-  /* background: rgba(0, 0, 0, 0.1); */
+  left: min(72vw, 82vh); /* Адаптивное позиционирование */
   background: rgba(255, 255, 255, 0.1);
   border: 10px solid rgba(0, 0, 0, 0);
   border-radius: 10px;
@@ -13,16 +12,29 @@
   grid-gap: 2px;
   grid-template-rows: repeat(4, 1fr);
   grid-template-columns: repeat(4, 1fr);
-  width: 11vw;
-  height: 11vw;
+  width: min(11vw, 20vh); /* Адаптивные размеры */
+  height: min(11vw, 20vh);
 }
 
-
-/* Добавить в Preview.css */
+/* Адаптивность для предпросмотра */
 @media (max-width: 768px) {
   .Preview {
-    left: 65vw;
-    width: 15vw;
-    height: 15vw;
+    left: min(68vw, 75vh);
+  }
+
+  .Preview-board {
+    width: min(13vw, 18vh);
+    height: min(13vw, 18vh);
+  }
+}
+
+@media (max-width: 480px) {
+  .Preview {
+    left: min(65vw, 70vh);
+  }
+
+  .Preview-board {
+    width: min(15vw, 16vh);
+    height: min(15vw, 16vh);
   }
 }

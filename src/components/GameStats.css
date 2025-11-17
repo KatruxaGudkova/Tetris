@@ -1,6 +1,6 @@
 .GameStats {
   position: absolute;
-  width: 22vw;
+  width: min(22vw, 30vh); /* Адаптивная ширина */
   list-style-type: none;
   color: rgba(255, 255, 255, 0.5);
 }
@@ -18,7 +18,18 @@
 }
 
 .GameStats .value {
-  font-size: 2.8rem;
+  font-size: min(2.8rem, 5vh); /* Адаптивный размер шрифта */
   margin-bottom: 0.5em;
   color: rgba(255, 255, 255, 1);
+}
+
+/* Для мобильных */
+@media (max-width: 768px) {
+  .GameStats {
+    width: min(25vw, 35vh);
+  }
+
+  .GameStats .value {
+    font-size: min(2.2rem, 4vh);
+  }
 }
