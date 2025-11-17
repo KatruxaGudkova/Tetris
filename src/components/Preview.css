@@ -16,3 +16,13 @@
   width: 11vw;
   height: 11vw;
 }
+
+
+/* Добавить в Preview.css */
+@media (max-width: 768px) {
+  .Preview {
+    left: 65vw;
+    width: 15vw;
+    height: 15vw;
+  }
+}
