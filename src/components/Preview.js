@@ -1,17 +1,12 @@
 import "./Preview.css";
 import React from "react";
-
 import { buildBoard } from "../business/Board.js";
 import { transferToBoard } from "../business/Tetrominoes.js";
-
 import BoardCell from "./BoardCell.js";
 
 const Preview = ({ tetromino, index }) => {
   const { shape, className } = tetromino;
-
   const board = buildBoard({ rows: 4, columns: 4 });
-
-  const style = { top: `${index * 15}vw` };
 
   board.rows = transferToBoard({
     className,
@@ -21,8 +16,13 @@ const Preview = ({ tetromino, index }) => {
     shape,
   });
 
+  const previewTitles = ["Следующая фигура", "Через 1", "Через 2", "Через 3"];
+
   return (
-    <div className="Preview" style={style}>
+    <div className="Preview">
+      <div className="Preview-title">
+        {previewTitles[index] || `Через ${index}`}
+      </div>
       <div className="Preview-board">
         {board.rows.map((row, y) =>
           row.map((cell, x) => (

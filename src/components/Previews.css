@@ -1,0 +1,32 @@
+.Previews {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.Previews-title {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: min(1.4rem, 2.5vh);
+  margin-bottom: 15px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+  .Previews {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .Previews-title {
+    display: none; /* Скрываем заголовок на мобильных */
+  }
+}
+
+@media (max-width: 480px) {
+  .Previews {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

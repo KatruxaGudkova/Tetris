@@ -1,10 +1,8 @@
 .Preview {
-  position: absolute;
-  top: 0;
-  left: min(72vw, 82vh); /* Адаптивное позиционирование */
-  background: rgba(255, 255, 255, 0.1);
-  border: 10px solid rgba(0, 0, 0, 0);
-  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
 
 .Preview-board {
@@ -12,29 +10,44 @@
   grid-gap: 2px;
   grid-template-rows: repeat(4, 1fr);
   grid-template-columns: repeat(4, 1fr);
-  width: min(11vw, 20vh); /* Адаптивные размеры */
-  height: min(11vw, 20vh);
+  width: min(90px, 10vw);
+  height: min(90px, 10vw);
+  min-width: 70px;
+  min-height: 70px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.Preview-title {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: min(1rem, 2vh);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* Адаптивность для предпросмотра */
 @media (max-width: 768px) {
   .Preview {
-    left: min(68vw, 75vh);
+    gap: 5px;
   }
 
   .Preview-board {
-    width: min(13vw, 18vh);
-    height: min(13vw, 18vh);
+    width: min(70px, 8vw);
+    height: min(70px, 8vw);
+    min-width: 50px;
+    min-height: 50px;
+  }
+
+  .Preview-title {
+    font-size: min(0.9rem, 1.8vh);
   }
 }
 
 @media (max-width: 480px) {
-  .Preview {
-    left: min(65vw, 70vh);
-  }
-
   .Preview-board {
-    width: min(15vw, 16vh);
-    height: min(15vw, 16vh);
+    width: min(60px, 6vw);
+    height: min(60px, 6vw);
+    min-width: 40px;
+    min-height: 40px;
   }
 }
